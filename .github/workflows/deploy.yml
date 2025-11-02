@@ -30,6 +30,10 @@ jobs:
       - name: Configure Docker for Artifact Registry
         run: |
           gcloud auth configure-docker $GAR_LOCATION-docker.pkg.dev
+          
+      - name: Verify authentication
+        run: |
+          gcloud auth list
 
       - name: Build Docker image
         run: |
